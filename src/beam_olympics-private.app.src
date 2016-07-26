@@ -1,0 +1,17 @@
+{application, 'beam_olympics-private', [
+  {description, "Let's find the best beamer!"},
+  {vsn, "1.0.0"},
+  {id, "beam_olympics-private"},
+  {registered, []},
+  {applications, [
+    beam_olympics
+  ]},
+  {modules, []},
+  {mod, {bo, []}},
+  {env, []},
+  {maintainers, ["Inaka"]},
+  {licenses, ["Apache 2.0"]},
+  {links, [ {"Github", "https://github.com/inaka/beam_olympics-private"}
+          ]},
+  {build_tools, ["rebar3"]}
+ ]}.
