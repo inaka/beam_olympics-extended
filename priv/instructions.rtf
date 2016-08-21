@@ -1,0 +1,129 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 GothamHTF-Medium;\f1\fnil\fcharset0 GothamHTF-Light;\f2\fnil\fcharset0 LucidaGrande;
+\f3\fswiss\fcharset0 Helvetica;\f4\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green31\blue103;\red63\green105\blue30;\red164\green8\blue0;
+}
+\margl1440\margr1440\vieww26020\viewh12320\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 RULES
+\b0\fs24 \
+\
+
+\f1 * To prevent fraud, users must always post solutions from the node in which they signed up. The node might crash/be closed, but when restarted it has to be called with the same name, otherwise submissions will be rejected.\
+* There is no undo, if you skipped a task you can't choose to submit a solution for it later.\
+* Each task has it's own associated score. Points are assigned this way:\
+* Each time a task is correctly solved, score points are added to the user\
+* Each time a task is skipped, score / 2 points are deduced from the user\
+After skipping or completing a task, the user will either receive a new task or just the atom the_end indicating that the game is over\
+
+\f0 \
+
+\b\fs28 HOW TO PLAY
+\b0\fs24 \
+\
+
+\f1 It\'92s pretty simple:\
+\
+Connect to the server by using the cookie "{cookie}". Then, whenever you sign up (using your own machine/node), the server will give you the first challenge.\
+Solve it to win points, then move to the next ones.\
+\
+You will be able to play at any time during the two days of the conference. The challenges are aimed at beginner to intermediate level developers, and each takes only a few minutes to solve. \
+\
+You can check the leaderboard and scores at the Erlang Solutions table at any time. At the end of the conference, the player with the highest score* will win the Parrot AR 2.0 drone.
+\f2 \uc0\u8194 \u8194 
+\f1 \
+\
+May the best Alchemist win!\
+\
+*Note: Should a tie occur between multiple players, a draw will be conducted to select the prize winner.\
+
+\f0 \
+\
+
+\b\fs28 SIGNUP\
+
+\b0\fs24 \
+
+\f1   Use this call to register on the game server.
+\f0 \
+
+\f3 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f4 \cf0  \cf2 GenServer\cf0 .call(\
+	\{\cf2 :bo_server\cf0 , server_node\},\
+	\{\cf2 :signup\cf0 , \cf3 \'93YourName\'94\cf0 \})
+\f3 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 TASK
+\f3 \
+
+\b0\fs24 \
+
+\f1   Retrieves the current task for the player.
+\f3 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f4 \cf0  \cf2 GenServer\cf0 .call(\
+	\{\cf2 :bo_server\cf0 , server_node\},\
+	\{\cf2 :task\cf0 , \cf3 "YourName"\cf0 \})
+\f3 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 SUBMIT
+\f3 \
+
+\b0\fs24 \
+
+\f1   Retrieves the current task for the player.
+\f3 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f4 \cf0  \cf2 GenServer\cf0 .call(\
+	\{\cf2 :bo_server\cf0 , server_node\},\
+	\{\cf2 :submit\cf0 , \cf3 "YourName"\cf0 ,\
+	 \cf4 fn\cf0 () -> \cf2 :something\cf0  \cf4 end\cf0 \})
+\f3 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 SKIP
+\f3 \
+
+\b0\fs24 \
+
+\f1   Skips the current task.
+\f3 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f4 \cf0  \cf2 GenServer\cf0 .call(\
+	\{\cf2 :bo_server\cf0 , server_node\},\
+	\{\cf2 :skip\cf0 , \cf3 \'93YourName\'94\cf0 \})
+\f3 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 SCORE
+\f3 \
+
+\b0\fs24 \
+
+\f1   Get your current score.
+\f3 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f4 \cf0  \cf2 GenServer\cf0 .call(\
+	\{\cf2 :bo_server\cf0 , server_node\},\
+	\{\cf2 :score\cf0 , \cf3 \'93YourName\'94\cf0 \})}
