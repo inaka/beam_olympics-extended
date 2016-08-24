@@ -20,7 +20,7 @@ start() ->
 %% Utils
 %%==============================================================================
 get_instructions() ->
-  PrivDir = priv_dir(),
+  PrivDir = code:priv_dir(beam_olympics_private),
   Filename = filename:join(PrivDir, filename()),
   {ok, Data} = file:read_file(Filename),
   replace(Data, [ {<<"{cookie}">>, atom_to_binary(erlang:get_cookie(), utf8)}
@@ -35,11 +35,3 @@ replace(Bin, {Pattern, Replacement}) ->
 
 filename() ->
   "instructions.rtf".
-
-priv_dir() ->
-  case code:priv_dir('beam_olympics-private') of
-    Path when is_list(Path) ->
-      Path;
-    _ ->
-      "lib/beam_olympics-private-1.0.0/priv/"
-  end.
