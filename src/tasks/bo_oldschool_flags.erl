@@ -18,7 +18,7 @@ description() -> <<"Oldschool Flags: The thing about interfacing old systems is"
                     "1::size(1), 1::size(1)>>.">>.
 
 -spec spec() -> bo_task:spec().
-spec() -> #{ input => [<<"[boolean()], char | short | int">>]
+spec() -> #{ input => [<<"[boolean()]">>, <<"char | short | int">>]
            , output => <<"binary()">>
            }.
 
