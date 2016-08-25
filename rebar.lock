@@ -1,3 +1,4 @@
+{"1.1.0",
 [{<<"beam_olympics">>,
   {git,"git@github.com:inaka/beam_olympics.git",
        {ref,"05a4821bcc4a0e8fbb0413a2fa47d08269fea445"}},
@@ -34,4 +35,8 @@
  {<<"worker_pool">>,
   {git,"https://github.com/inaka/worker_pool.git",
        {ref,"94fd1633413e553e5ee1f302b5ad23488510dd70"}},
-  2}].
+  2}]}.
+[
+{pkg_hash,[
+ {<<"eper">>, <<"F5FB2DAA0DF8878748E1C598428EDA942A173E5121FF35C1D632129B84593A3A">>}]}
+].

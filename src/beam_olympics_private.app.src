@@ -1,7 +1,7 @@
-{application, 'beam_olympics-private', [
+{application, 'beam_olympics_private', [
   {description, "Let's find the best beamer!"},
   {vsn, "1.0.0"},
-  {id, "beam_olympics-private"},
+  {id, "beam_olympics_private"},
   {registered, []},
   {applications, [
     beam_olympics
