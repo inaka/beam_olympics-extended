@@ -57,7 +57,7 @@ cases() ->
   [ {[], char}
   , {[true, true], char}
   , {[], short}
-  , {[true, false, true, true]}
+  , {[true, false, true, true], short}
   , {[], int}
   , {[true], int}
   , {[true, false, true, false], short}
@@ -71,7 +71,7 @@ build_case() ->
     _ <- lists:seq(1, rand:uniform(get_size(Type)))], Type}.
 
 get_random_type() -> lists:nth(rand:uniform(3), [char, short, int]).
-get_random_bool() -> rand:uniform().
+get_random_bool() -> rand:uniform() > 0.5.
 
 solve(L, Type) ->
   <<(sum(lists:reverse(L), 1, 0)):(get_size(Type))/unsigned-integer>>.
