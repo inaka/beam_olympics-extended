@@ -13,7 +13,7 @@ description() -> <<"Oldschool Flags: The thing about interfacing old systems is"
                    "list of booleans and the size of an integer (char, short, "
                    "int) and return the binary representation of those flags. "
                    "For example, if you receive ([:true, :false, :false, :true,"
-                    " :true], :short), return <<0::size(1), 0::size(1), "
+                    " :true], :char), return <<0::size(1), 0::size(1), "
                     "0::size(1), 1::size(1), 0::size(1), 0::size(1), "
                     "1::size(1), 1::size(1)>>.">>.
 
