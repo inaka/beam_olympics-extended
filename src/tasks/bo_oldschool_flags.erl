@@ -13,7 +13,7 @@ description() -> <<"Oldschool Flags: The thing about interfacing old systems is"
                    "list of booleans and the size of an integer (char, short, "
                    "int) and return the binary representation of those flags. "
                    "For example, if you receive ([:true, :false, :false, :true,"
-                    " :true], :short), return <<0::size(1), 0::size(1), "
+                    " :true], :char), return <<0::size(1), 0::size(1), "
                     "0::size(1), 1::size(1), 0::size(1), 0::size(1), "
                     "1::size(1), 1::size(1)>>.">>.
 
@@ -54,21 +54,12 @@ build_test({Bools, Type}) ->
 %% Utils
 %%==============================================================================
 cases() ->
-  [ {[], char}
-  , {[true, true], char}
-  , {[], short}
-  , {[true, false, true, true], short}
-  , {[], int}
-  , {[true], int}
-  , {[true, false, true, false], short}
-  , {[true || _ <- lists:seq(1, 32)], int}
-  , {[false || _ <- lists:seq(1, 32)], int}] ++
   [build_case() || _ <- lists:seq(1, 20)].
 
 build_case() ->
   Type = get_random_type(),
   {[get_random_bool() ||
-    _ <- lists:seq(1, rand:uniform(get_size(Type)))], Type}.
+    _ <- lists:seq(1, get_size(Type))], Type}.
 
 get_random_type() -> lists:nth(rand:uniform(3), [char, short, int]).
 get_random_bool() -> rand:uniform() > 0.5.
