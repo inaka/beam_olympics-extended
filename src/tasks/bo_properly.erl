@@ -8,12 +8,12 @@
 %% API
 %%==============================================================================
 -spec description() -> binary().
-description() -> <<"Do it properly: You will receive a list, make sure that "
-                   "list and any nested lists are proper lists. Return that "
-                   "list.">>.
+description() -> <<"Do it properly: You will receive a list, return an "
+                   "equivalent (but proper) list where all it's sublists (if "
+                   "any) are also proper.">>.
 
 -spec spec() -> bo_task:spec().
-spec() -> #{ input => [<<"[boolean()]">>, <<"char | short | int">>]
+spec() -> #{ input => [<<"maybe_improper_list(any(), any())">>, <<"[any()]">>]
            , output => <<"binary()">>
            }.
 
