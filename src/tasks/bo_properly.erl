@@ -13,7 +13,7 @@ description() -> <<"Do it properly: You will receive a list, return an "
                    "any) are also proper.">>.
 
 -spec spec() -> bo_task:spec().
-spec() -> #{ input => <<"maybe_improper_list(any(), any())">>
+spec() -> #{ input => [<<"maybe_improper_list(any(), any())">>]
            , output => <<"[any()]">>
            }.
 
