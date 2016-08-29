@@ -40,13 +40,9 @@ build_test() ->
           ok -> ok
         catch
           throw:E1 ->
-            {error, #{ input => []
-                     , output => []
-                     , expected => E1
-                     }};
+            {error, #{ error => E1 }};
           _:E2 ->
-            {error, #{ input => []
-                     , output => E2
+            {error, #{ error => E2
                      , stack => erlang:get_stacktrace()
                      , expected => <<"The gen_servers should not crash.">>
                      }}
@@ -59,7 +55,7 @@ build_test() ->
     catch
       _:Error ->
         {error, #{ input => []
-                 , output => Error
+                 , error => Error
                  , stack => erlang:get_stacktrace()
                  , expected => <<"Though I'm sure there's a parallel universe "
                                  "where it didn't crash, it is required to work"
