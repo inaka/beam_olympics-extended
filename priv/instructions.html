@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=us-ascii">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.1  (FreeBSD/amd64)">
+	<META NAME="CREATED" CONTENT="20160823;7252700">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 1in }
+		P { margin-bottom: 0.08in }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR" STYLE="border: none; padding: 0in">
+<P STYLE="margin-bottom: 0in"><FONT SIZE=4><B>RULES</B></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="GothamHTF-Light">* To
+prevent fraud, users must always post solutions from the node in
+which they signed up. The node might crash/be closed, but when
+restarted it has to be called with the same name, otherwise
+submissions will be rejected.</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="GothamHTF-Light">* There is
+no undo, if you skipped a task you can't choose to submit a solution
+for it later.</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="GothamHTF-Light">* Each
+task has it's own associated score. Points are assigned this way:</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="GothamHTF-Light">* Each
+time a task is correctly solved, score points are added to the user</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="GothamHTF-Light">* Each
+time a task is skipped, score / 2 points are deduced from the user</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="GothamHTF-Light">After
+skipping or completing a task, the user will either receive a new
+task or just the atom the_end indicating that the game is over</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT SIZE=4><B>HOW TO PLAY</B></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="GothamHTF-Light">Connect to the server node {node} using the cookie {cookie}. Then, whenever you sign up (using your own machine/node), the server will give you the first challenge.
+Solve it to win points, then move to the next ones.</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:bo_server</FONT></FONT><FONT FACE="GothamHTF-Light">
+gen_server.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="GothamHTF-Light">Here are
+the commands you can call on the server to do things like start a
+game or solve a puzzle.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>SIGNUP</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">  <FONT FACE="GothamHTF-Light">Use this
+call to register on the game server.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"> <FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">GenServer</FONT></FONT><FONT FACE="Menlo-Regular">.call(</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:bo_server</FONT></FONT><FONT FACE="Menlo-Regular">,
+server_node},</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:signup</FONT></FONT><FONT FACE="Menlo-Regular">,
+</FONT><FONT COLOR="#3f691e"><FONT FACE="Menlo-Regular">&ldquo;YourName&rdquo;</FONT></FONT><FONT FACE="Menlo-Regular">})</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>TASK</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">  <FONT FACE="GothamHTF-Light">Retrieves
+the current task for the player.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"> <FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">GenServer</FONT></FONT><FONT FACE="Menlo-Regular">.call(</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:bo_server</FONT></FONT><FONT FACE="Menlo-Regular">,
+server_node},</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:task</FONT></FONT><FONT FACE="Menlo-Regular">,
+</FONT><FONT COLOR="#3f691e"><FONT FACE="Menlo-Regular">&quot;YourName&quot;</FONT></FONT><FONT FACE="Menlo-Regular">})</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>SUBMIT</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">  <FONT FACE="GothamHTF-Light">Retrieves
+the current task for the player.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"> <FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">GenServer</FONT></FONT><FONT FACE="Menlo-Regular">.call(</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:bo_server</FONT></FONT><FONT FACE="Menlo-Regular">,
+server_node},</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:submit</FONT></FONT><FONT FACE="Menlo-Regular">,
+</FONT><FONT COLOR="#3f691e"><FONT FACE="Menlo-Regular">&quot;YourName&quot;</FONT></FONT><FONT FACE="Menlo-Regular">,</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	 </FONT><FONT COLOR="#a40800"><FONT FACE="Menlo-Regular">fn</FONT></FONT><FONT FACE="Menlo-Regular">()
+-&gt; </FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:something</FONT></FONT><FONT FACE="Menlo-Regular">
+</FONT><FONT COLOR="#a40800"><FONT FACE="Menlo-Regular">end</FONT></FONT><FONT FACE="Menlo-Regular">})</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>SKIP</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">  <FONT FACE="GothamHTF-Light">Skips
+the current task.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"> <FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">GenServer</FONT></FONT><FONT FACE="Menlo-Regular">.call(</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:bo_server</FONT></FONT><FONT FACE="Menlo-Regular">,
+server_node},</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:skip</FONT></FONT><FONT FACE="Menlo-Regular">,
+</FONT><FONT COLOR="#3f691e"><FONT FACE="Menlo-Regular">&ldquo;YourName&rdquo;</FONT></FONT><FONT FACE="Menlo-Regular">})</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>SCORE</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">  <FONT FACE="GothamHTF-Light">Get your
+current score.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"> <FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">GenServer</FONT></FONT><FONT FACE="Menlo-Regular">.call(</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:bo_server</FONT></FONT><FONT FACE="Menlo-Regular">,
+server_node},</FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Menlo-Regular">	{</FONT><FONT COLOR="#001f67"><FONT FACE="Menlo-Regular">:score</FONT></FONT><FONT FACE="Menlo-Regular">,
+</FONT><FONT COLOR="#3f691e"><FONT FACE="Menlo-Regular">&ldquo;YourName&rdquo;</FONT></FONT><FONT FACE="Menlo-Regular">})</FONT></P>
+</BODY>
+</HTML>
