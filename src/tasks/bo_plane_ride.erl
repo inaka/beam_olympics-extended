@@ -23,8 +23,8 @@ spec() ->
    , output => <<"[string()]">>
    }.
 
--spec score() -> 250.
-score() -> 250.
+-spec score() -> 500.
+score() -> 500.
 
 -spec timeout() -> 5000.
 timeout() -> 5000.

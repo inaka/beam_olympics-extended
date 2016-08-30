@@ -22,8 +22,8 @@ spec() -> #{ input => [<<"[boolean()]">>, <<"char | short | int">>]
            , output => <<"binary()">>
            }.
 
--spec score() -> 150.
-score() -> 150.
+-spec score() -> 450.
+score() -> 450.
 
 -spec timeout() -> 5000.
 timeout() -> 5000.

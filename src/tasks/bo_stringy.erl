@@ -17,8 +17,8 @@ description() -> <<"Stringy: We all love working with strings on elixir (erlang"
 -spec spec() -> bo_task:spec().
 spec() -> #{input => [<<"binary()">>], output => <<"binary()">>}.
 
--spec score() -> 150.
-score() -> 150.
+-spec score() -> 250.
+score() -> 250.
 
 -spec timeout() -> 5000.
 timeout() -> 5000.
