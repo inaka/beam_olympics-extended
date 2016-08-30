@@ -1,3 +1,4 @@
+{"1.1.0",
 [{<<"beam_olympics">>,
   {git,"git@github.com:inaka/beam_olympics.git",
        {ref,"677ec2d301fd83d5bbf72f4898189c69daff5848"}},
@@ -38,4 +39,12 @@
  {<<"worker_pool">>,
   {git,"https://github.com/inaka/worker_pool.git",
        {ref,"94fd1633413e553e5ee1f302b5ad23488510dd70"}},
-  2}].
+  2}]}.
+[
+{pkg_hash,[
+ {<<"eini">>, <<"97C8CB2F54172E671A419FDC8BC3C3CD62D7E8B0993B6482E81CCCA9E83604B1">>},
+ {<<"eper">>, <<"F5FB2DAA0DF8878748E1C598428EDA942A173E5121FF35C1D632129B84593A3A">>},
+ {<<"erlcloud">>, <<"CBD69868F536942CFE61A3BE6DE8DBDC9F877909196DD377CDE60192AECB2EEE">>},
+ {<<"jsx">>, <<"749BEC6D205C694AE1786D62CEA6CC45A390437E24835FD16D12D74F07097727">>},
+ {<<"lhttpc">>, <<"61760AFEC1DDB98E47972BE93B13FBFF487A63D65B91A02C41122A0ADF83DA38">>}]}
+].
