@@ -17,8 +17,8 @@ spec() -> #{ input => [<<"maybe_improper_list(any(), any())">>]
            , output => <<"[any()]">>
            }.
 
--spec score() -> 150.
-score() -> 150.
+-spec score() -> 400.
+score() -> 400.
 
 -spec timeout() -> 5000.
 timeout() -> 5000.

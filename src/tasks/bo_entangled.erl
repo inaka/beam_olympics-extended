@@ -23,8 +23,8 @@ description() -> <<"Entangled: We figured out how to transmit erlang data "
 -spec spec() -> bo_task:spec().
 spec() -> #{input => [], output => <<"{pid(), pid()}">>}.
 
--spec score() -> 150.
-score() -> 150.
+-spec score() -> 450.
+score() -> 450.
 
 -spec timeout() -> 5000.
 timeout() -> 5000.

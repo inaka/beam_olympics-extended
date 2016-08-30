@@ -18,8 +18,8 @@ description() -> <<"Fun with numbers: Write a function that receives a string "
 -spec spec() -> bo_task:spec().
 spec() -> #{input => [<<"binary()">>], output => <<"[integer() | float()]">>}.
 
--spec score() -> 150.
-score() -> 150.
+-spec score() -> 200.
+score() -> 200.
 
 -spec timeout() -> 5000.
 timeout() -> 5000.

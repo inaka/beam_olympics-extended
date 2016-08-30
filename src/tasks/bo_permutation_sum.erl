@@ -15,8 +15,8 @@ description() -> <<"Permusum: Write a function that receives an integer and"
 -spec spec() -> bo_task:spec().
 spec() -> #{input => [<<"pos_integer()">>], output => <<"pos_integer()">>}.
 
--spec score() -> 150.
-score() -> 150.
+-spec score() -> 180.
+score() -> 180.
 
 -spec timeout() -> 5000.
 timeout() -> 5000.
