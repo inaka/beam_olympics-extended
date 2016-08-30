@@ -94,7 +94,7 @@ check(Pid1, Pid2) ->
   % The spins should be inverted
   _ = case {get_spin(Pid1), get_spin(Pid2)}of
         {S2, S1} -> ok;
-        _        -> throw(<<"They are not properly entangled">>)
+        _        -> throw(<<"The gen_servers did not change spins correctly">>)
       end,
 
   % Invert the spins again
@@ -102,7 +102,7 @@ check(Pid1, Pid2) ->
   % The spins should be inverted
   _ = case {get_spin(Pid1), get_spin(Pid2)}of
         {S1, S2} -> ok;
-        _        -> throw(<<"They are not properly entangled">>)
+        _        -> throw(<<"The gen_servers did not change spins correctly">>)
       end,
 
   % Do it lots of times in a row
@@ -120,7 +120,7 @@ check(Pid1, Pid2) ->
   % The spins should not have changed
   _ = case {get_spin(Pid1), get_spin(Pid2)}of
         {S1, S2} -> ok;
-        _        -> throw(<<"They are not properly entangled">>)
+        _        -> throw(<<"The gen_servers did not change spins correctly">>)
       end,
 
   % If nothing failed, then return ok
