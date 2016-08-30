@@ -21,9 +21,18 @@ score() -> 300.
 timeout() -> 5000.
 
 -spec tests() -> [bo_task:test()].
-tests() -> [build_test(Input) || Input <- test_inputs()].
+tests() ->
+  [build_test(Input) || Input <- test_inputs(bo_utils:get_difficulty())].
 
-test_inputs() ->
+test_inputs(hard) ->
+  test_inputs(normal) ++
+  [ {<<"IIII">>,          fail}
+  , {<<"VV">>,            fail}
+  , {<<"IL">>,            fail}
+  , {<<"XM">>,            fail}
+  , {<<"IVII">>,          fail}
+  ];
+test_inputs(_Other) ->
   [ {<<"">>,              fail}
   , {<<"WAT">>,           fail}
   , {<<"I">>,             1}
@@ -46,10 +55,6 @@ test_inputs() ->
   , {<<"XIX">>,           19}
   , {<<"CMXLIX">>,        949}
   , {<<"MMMDCCCLXXVI">>,  3876}
-  % , {<<"IIII">>,          fail}
-  % , {<<"VV">>,            fail}
-  % , {<<"IL">>,            fail}
-  % , {<<"XM">>,            fail}
   ].
 
 build_test({Roman, fail}) ->

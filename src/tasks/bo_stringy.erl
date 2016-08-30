@@ -81,7 +81,8 @@ build_cases() ->
     "without, I thought, proper consideration."
   , "It would be really mean to test how you do the alphabet wouldn't it? too "
     "bad, here it is: a b c d e f g h i j (would a parenthesis complicate "
-    "things even more?) k l m n o p q r s t u (and what this: (())) v w x y z."
+    "things even more?) k l m n o p q r s t u (and what about this: (())) v w x"
+    " y z."
   ].
 
 solve(Bin) ->

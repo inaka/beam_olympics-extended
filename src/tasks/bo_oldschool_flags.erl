@@ -54,12 +54,18 @@ build_test({Bools, Type}) ->
 %% Utils
 %%==============================================================================
 cases() ->
-  [build_case() || _ <- lists:seq(1, 20)].
+  Difficulty = bo_utils:difficulty(),
+  [build_case(Difficulty) || _ <- lists:seq(1, 20)].
 
-build_case() ->
+build_case(Difficulty) ->
   Type = get_random_type(),
-  {[get_random_bool() ||
-    _ <- lists:seq(1, get_size(Type))], Type}.
+  Booleans = case Difficulty of
+               % On harder difficulties, the amount of booleans might be less
+               % than the expected size, this forces you to do some padding
+               hard -> rand:uniform(get_size(Type));
+               _    -> get_size(Type)
+             end,
+  {[get_random_bool() || _ <- lists:seq(1, Booleans)], Type}.
 
 get_random_type() -> lists:nth(rand:uniform(3), [char, short, int]).
 get_random_bool() -> rand:uniform() > 0.5.

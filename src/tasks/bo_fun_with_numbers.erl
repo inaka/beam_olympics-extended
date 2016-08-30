@@ -25,7 +25,9 @@ score() -> 200.
 timeout() -> 5000.
 
 -spec tests() -> [bo_task:test()].
-tests() -> [build_test(list_to_binary(Str)) || Str <- build_cases()].
+tests() ->
+  Difficulty = bo_utils:get_difficulty(),
+  [build_test(list_to_binary(Str)) || Str <- build_cases(Difficulty)].
 
 build_test(Bin) ->
   fun(Fun) ->
@@ -49,7 +51,16 @@ build_test(Bin) ->
 %%==============================================================================
 %% Utils
 %%==============================================================================
-build_cases() ->
+build_cases(hard) ->
+  build_cases(normal) ++
+  [ "Besides parsing those strings, there are other (more complex) examples "
+    "that would make anyone's life more difficult. For example, what if I tell "
+    "you that .1% of the speed of light (299,792,458 meters per seconds) is "
+    "1.079e+8? How would you even parse that?"
+  , "Also, I see you got around the speed of light being 299,792,458 mps, but "
+    "299, 792 and 458 are not the same thing."
+  ];
+build_cases(_Other) ->
   [ "Intel continues to shrink its manufacturing technology: 45 nm with "
     "high-k/metal gate in 2007; 32 nm in 2009; and now 22 nm with the world's "
     "first 3D transistor in a high volume logic process beginning in 2011."
@@ -69,15 +80,9 @@ build_cases() ->
     "$32.5 million in earnings over the last 12 months from appearances, prize "
     "money and sponsors is roughly 10 times what other track and field stars "
     "bank."
-% , "Besides parsing those strings, there are other (more complex) examples "
-%   "that would make anyone's life more difficult. For example, what if I tell "
-%   "you that .1% of the speed of light (299,792,458 meters per seconds) is "
-%   "1.079e+8? How would you even parse that?"
   , "Choosing what to do with periods is also complicated, for example I am "
     "going to finish a sentence with 93. Was that a too easy? Then I'm going to"
     " end this sentence with 32.1."
-% , "Also, I see you got around the speed of light being 299,792,458 mps, but "
-%   "299, 792 and 458 are not the same thing."
   , "And finally, the last test, this should be the one of the easier ones, can"
     "you handle something like 1.079e+8? That's 0.1% of the speed of light in "
     "case you are wondering. And as a last challenge, I'm finishing with a "
