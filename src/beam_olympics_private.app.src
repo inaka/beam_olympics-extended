@@ -3,9 +3,10 @@
   {vsn, "1.0.0"},
   {id, "beam_olympics_private"},
   {registered, []},
-  {applications, [erlcloud, beam_olympics]},
+  {applications, [erlcloud, ranch, cowboy, jiffy, beam_olympics]},
   {modules, []},
   {env, []},
+  {mod, {beam_olympics_private, []}},
   {maintainers, ["Inaka"]},
   {licenses, ["Apache 2.0"]},
   {links, [ {"Github", "https://github.com/inaka/beam_olympics-private"}
