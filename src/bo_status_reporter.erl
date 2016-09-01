@@ -1,7 +1,7 @@
 -module(bo_status_reporter).
 
 %% API
--export([start/0]).
+-export([start/0, signedup/1, advanced/2]).
 
 %%==============================================================================
 %% API
@@ -15,6 +15,14 @@ start() ->
   ok = erlcloud_ec2:configure(Key, Secret),
   ok = upload_instructions("rtf", Bucket),
   ok = upload_instructions("html", Bucket).
+
+-spec signedup(any()) -> ok.
+signedup(Player) ->
+  ok = notify_player_change(added, Player).
+
+-spec advanced(any(), any()) -> ok.
+advanced(_Type, Player) ->
+  ok = notify_player_change(changed, Player).
 
 %%==============================================================================
 %% Utils
@@ -41,3 +49,10 @@ replace(Bin, {Pattern, Replacement}) ->
 
 filename(Extension) ->
   "instructions." ++ Extension.
+
+notify_player_change(Type, Player) ->
+  #{name := Name, done := Done, score := Score} = bo_players:stats(Player),
+  Tasks = length(bo_tasks:all()),
+  lists:foreach(fun(Pid) ->
+                  Pid ! {Type, Name, Done, Tasks, Score}
+                end, pg2:get_members(websockets)).
