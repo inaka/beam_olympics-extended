@@ -1,0 +1,15 @@
+{application, 'beam_olympics_extended', [
+  {description, "Let's find the best beamer!"},
+  {vsn, "1.0.0"},
+  {id, "beam_olympics_extended"},
+  {registered, []},
+  {applications, [erlcloud, ranch, cowboy, jiffy, beam_olympics]},
+  {modules, []},
+  {env, []},
+  {mod, {beam_olympics_extended, []}},
+  {maintainers, ["Inaka"]},
+  {licenses, ["Apache 2.0"]},
+  {links, [ {"Github", "https://github.com/inaka/beam_olympics-extended"}
+          ]},
+  {build_tools, ["rebar3"]}
+ ]}.
