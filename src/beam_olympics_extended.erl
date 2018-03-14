@@ -19,7 +19,7 @@ stop(_State) ->
 %%==============================================================================
 start_cowboy() ->
   Dispatch = {dispatch, cowboy_router:compile(get_dispatch())},
-  cowboy:start_http(http, 100, [{port, 8080}], [{env, [Dispatch]}]).
+  cowboy:start_http(http, 100, [{port, 8081}], [{env, [Dispatch]}]).
 
 get_dispatch() ->
   Path = code:priv_dir(beam_olympics_extended) ++ "/web",
